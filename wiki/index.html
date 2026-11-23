@@ -1,0 +1,185 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="有來源、能追溯且可搜尋的學習科學 Wiki，七篇文獻十八條證據主張。"><title>知識基地｜讀書方法的學習科學 Wiki</title>
+    <style>
+    :root{--ink:#173237;--muted:#586e70;--paper:#fbfaf6;--mint:#d5efe7;--teal:#13736b;--line:#dce8e4;--accent:#ffb36f}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Noto Sans TC','Microsoft JhengHei',system-ui,sans-serif;line-height:1.7}
+    a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #ed8c4c;outline-offset:3px}
+    .layout{display:grid;grid-template-columns:264px minmax(0,1fr);max-width:1600px;margin:auto;min-height:100vh}
+    aside{position:sticky;top:0;max-height:100vh;overflow-y:auto;background:#eef4ef;border-right:1px solid var(--line);padding:32px 22px}
+    .brand{font-weight:850;letter-spacing:.12em;font-size:13px;color:var(--teal);text-transform:uppercase}
+    .brandmark{width:39px;height:39px;background:var(--teal);border-radius:12px;color:white;display:grid;place-items:center;font-size:21px;margin-bottom:14px}
+    .nav-title{color:var(--muted);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:34px;margin-bottom:10px}
+    .nav-link{display:block;text-decoration:none;padding:8px 10px;border-radius:9px;color:#25464a;font-size:14px}
+    .nav-link:hover{background:#dbece7}.nav-link span{font-size:11px;color:#789593;margin-right:8px}
+    aside .project-link{display:block;background:#173d3d;color:white;border-radius:12px;padding:13px 15px;text-decoration:none;margin-top:30px;font-weight:700;font-size:14px}
+    main{min-width:0;padding:40px clamp(20px,5vw,76px) 90px}
+    .overline{font-size:12px;letter-spacing:.2em;color:#13736b;font-weight:800;text-transform:uppercase}
+    h1{font-size:clamp(33px,4.9vw,64px);letter-spacing:-.06em;line-height:1.17;margin:16px 0}
+    .lead{font-size:18px;max-width:860px;color:var(--muted);line-height:1.85}
+    .hero{background:radial-gradient(circle at 100% 0%,#d4ede1 0%,#edf5e9 35%,#f7f9f0 78%);border:1px solid var(--line);border-radius:23px;padding:clamp(25px,4vw,54px);position:relative;overflow:hidden}
+    .hero:after{content:'↺';position:absolute;right:4%;top:10px;font-size:clamp(120px,24vw,330px);font-weight:900;color:#d0e5d8;z-index:0;line-height:1;pointer-events:none}
+    .hero>*{position:relative;z-index:1}
+    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.stat{background:white;border:1px solid #e1ece8;border-radius:12px;padding:12px 18px;min-width:128px}
+    .stat b{font-size:28px;color:#12695e;margin-right:5px}.stat span{font-size:12px;color:var(--muted)}
+    .notice{background:#fff6e9;padding:19px 23px;border-left:4px solid var(--accent);margin:26px 0 38px;border-radius:5px 12px 12px 5px;color:#544434;font-size:14px}
+    .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:30px}.toolbar input{flex:1;min-width:220px;background:white;border:1px solid #cfded9;border-radius:12px;padding:14px 16px;font-size:16px;color:var(--ink)}
+    .toolbar small{color:var(--muted)}.topic-group{scroll-margin-top:24px;margin:54px 0}.group-heading{display:flex;gap:15px;align-items:baseline;border-bottom:1px solid var(--line);margin-bottom:18px}
+    .group-heading span{font-size:13px;color:var(--teal);font-weight:800}.group-heading h2{font-size:27px;letter-spacing:-.04em;margin:0 0 14px}.group-heading em{font-size:12px;color:var(--muted);font-style:normal;margin-left:auto}
+    .claims{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,315px),1fr));gap:15px}
+    .claim{background:white;border:1px solid var(--line);border-radius:14px;padding:23px;scroll-margin-top:20px;box-shadow:0 6px 25px rgba(20,60,57,.025)}
+    .claim-top{display:flex;align-items:start;gap:11px}.claim-num{color:#317d71;font-size:12px;font-weight:800;background:#e5f3ed;padding:4px 7px;border-radius:7px;white-space:nowrap}
+    .claim h3{font-size:18px;letter-spacing:-.025em;line-height:1.5;margin:0}.claim p{color:#34575a;font-size:15px;line-height:1.75}
+    .claim-source{border-top:1px dashed #d6e8e3;padding-top:12px;font-size:13px}.claim-source span{color:var(--muted);margin-right:7px}
+    .cite{font-weight:800;color:var(--teal);text-decoration:none;margin-right:6px}.cite:hover{text-decoration:underline}
+    details{margin-top:14px;color:#6b5b4c;font-size:13px;background:#fff9ef;border-radius:8px;padding:8px 11px}summary{cursor:pointer;font-weight:750}details p{font-size:13px!important;color:#6b5b4c!important}
+    .source-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:15px}
+    .source-card{border-radius:14px;border:1px solid var(--line);background:#fff;padding:22px;scroll-margin-top:20px}
+    .source-card h3{font-size:16px;line-height:1.4;overflow-wrap:anywhere;margin:12px 0}.source-card p{font-size:13px;color:#455f61}
+    .src-chip{font-size:12px;background:#e4f1eb;color:#146d63;border-radius:7px;padding:5px 9px;font-weight:800}.src-pub{font-size:12px!important;color:#617577!important}
+    .source-limit{border-left:3px solid #e9a66f;padding-left:12px}.source-bottom{display:flex;gap:15px;justify-content:space-between;align-items:end;border-top:1px solid #e0ece7;padding-top:11px;font-size:12px}
+    .source-bottom a{color:#067d70;font-weight:800;text-decoration:none;white-space:nowrap}.source-bottom span{color:#748786}
+    footer{border-top:1px solid var(--line);margin-top:55px;padding-top:18px;font-size:13px;color:var(--muted)}
+    .hidden{display:none!important}.empty{padding:28px;color:var(--muted);text-align:center}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}aside{position:relative;max-height:none;display:block;padding:14px 19px}aside .brandmark,aside .nav-title,aside nav{display:none}aside .project-link{display:inline-block;margin:0 0 0 15px}main{padding:20px 14px 65px}.hero:after{opacity:.4}.lead{font-size:16px}}
+    </style></head><body><div class="layout"><aside>
+      <div class="brandmark">◈</div><div class="brand">Evidence First / Wiki 01</div><div class="nav-title">知識地圖</div><nav><a href="#topic-0" class="nav-link"><span>01</span> 共同概念</a><a href="#topic-1" class="nav-link"><span>02</span> 提取練習</a><a href="#topic-2" class="nav-link"><span>03</span> 間隔練習</a><a href="#topic-3" class="nav-link"><span>04</span> 合併策略</a><a href="#topic-4" class="nav-link"><span>05</span> 交錯練習</a><a href="#topic-5" class="nav-link"><span>06</span> 研究限制</a><a href="#topic-6" class="nav-link"><span>07</span> 應用</a></nav>
+      <div class="nav-title">成果</div><a class="nav-link" href="#bibliography">07 / 來源文獻</a><a class="project-link" href="../slides/index.html">開啟教學簡報　→</a></aside>
+      <main><header class="hero"><div class="overline">LLM Wiki / Evidence-led learning</div>
+      <h1>不是讀更久，<br>而是<span style="color:#11796b">練習想起來</span>。</h1>
+      <p class="lead">從研究證據出發，理解「提取練習」與「間隔練習」。每則 Wiki 主張都能反查來源與解讀限制，並能直接對照教學簡報中的內容。</p>
+      <div class="stats"><div class="stat"><b>07</b><span>份已入庫文獻</span></div><div class="stat"><b>18</b><span>則可追溯主張</span></div><div class="stat"><b>07</b><span>個知識主題</span></div></div></header>
+      <div class="notice"><strong>資料處理聲明：</strong> 本 Wiki 匯入的是查證後、以繁體中文自行撰寫的來源摘要與證據主張，不是原論文全文，也不是 LLM 讀過全文後自動產生的研究結論。每篇原始來源均可點擊查核。</div>
+      <div class="toolbar"><input id="search" type="search" autocomplete="off" aria-label="搜尋 Wiki 主張" placeholder="搜尋：提取、間隔、交錯、S03…"><small id="resultCount">18 / 18 則證據</small></div>
+      <div id="claimGroups"><section class="topic-group" id="topic-0"><div class="group-heading"><span>01</span><h2>共同概念</h2><em>1 則證據卡</em></div><div class="claims"><article class="claim" id="C01" data-search="有證據支持的學習方法並非只有重讀 學習策略的研究綜述將練習測驗與分散練習評為較廣泛適用的策略。 共同概念 S01 S02">
+              <div class="claim-top"><span class="claim-num">C01</span><h3>有證據支持的學習方法並非只有重讀</h3></div>
+              <p>學習策略的研究綜述將練習測驗與分散練習評為較廣泛適用的策略。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S01" title="查看來源">[S01]</a> <a class="cite" href="#src-S02" title="查看來源">[S02]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>是研究整合與指引的建議，不表示任何人都必然提高成績。</p></details>
+            </article></div></section><section class="topic-group" id="topic-1"><div class="group-heading"><span>02</span><h2>提取練習</h2><em>4 則證據卡</em></div><div class="claims"><article class="claim" id="C02" data-search="提取是關上資料後回想 提取練習要求學習者從記憶中主動找回先前學過的內容，例如不看筆記先回答。 提取練習 S05 S06">
+              <div class="claim-top"><span class="claim-num">C02</span><h3>提取是關上資料後回想</h3></div>
+              <p>提取練習要求學習者從記憶中主動找回先前學過的內容，例如不看筆記先回答。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S05" title="查看來源">[S05]</a> <a class="cite" href="#src-S06" title="查看來源">[S06]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>例子為說明性改寫，並非原文教學步驟。</p></details>
+            </article><article class="claim" id="C03" data-search="回想也有學習功能 研究顯示，重複提取可以增進後來的記憶表現，而不只是當下量測懂不懂。 提取練習 S03 S07">
+              <div class="claim-top"><span class="claim-num">C03</span><h3>回想也有學習功能</h3></div>
+              <p>研究顯示，重複提取可以增進後來的記憶表現，而不只是當下量測懂不懂。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S03" title="查看來源">[S03]</a> <a class="cite" href="#src-S07" title="查看來源">[S07]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>不同實驗、材料與結果指標的效果不可混為一談。</p></details>
+            </article><article class="claim" id="C04" data-search="不看答案比認得答案更能檢測回想 先嘗試回答，再檢查答案並訂正，可用來發現真正不熟悉的概念。 提取練習 S02 S05">
+              <div class="claim-top"><span class="claim-num">C04</span><h3>不看答案比認得答案更能檢測回想</h3></div>
+              <p>先嘗試回答，再檢查答案並訂正，可用來發現真正不熟悉的概念。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S02" title="查看來源">[S02]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>實作建議，不代表只用測驗就足以學會新知。</p></details>
+            </article><article class="claim" id="C05" data-search="感覺很熟不等於真的記住 外語詞彙研究中，學生自我預測與後測表現沒有可靠對應，顯示流暢的主觀感受可能誤導。 提取練習 S03">
+              <div class="claim-top"><span class="claim-num">C05</span><h3>感覺很熟不等於真的記住</h3></div>
+              <p>外語詞彙研究中，學生自我預測與後測表現沒有可靠對應，顯示流暢的主觀感受可能誤導。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S03" title="查看來源">[S03]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>不應推論所有學習者的自我判斷永遠不準。</p></details>
+            </article></div></section><section class="topic-group" id="topic-2"><div class="group-heading"><span>03</span><h2>間隔練習</h2><em>3 則證據卡</em></div><div class="claims"><article class="claim" id="C06" data-search="把同一內容分開再練 分散練習把複習機會安排在不同時間，而不是集中於同一次讀書時段。 間隔練習 S04 S05">
+              <div class="claim-top"><span class="claim-num">C06</span><h3>把同一內容分開再練</h3></div>
+              <p>分散練習把複習機會安排在不同時間，而不是集中於同一次讀書時段。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S04" title="查看來源">[S04]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>這裡定義的是時間分配方式，不限定天數。</p></details>
+            </article><article class="claim" id="C07" data-search="分散學習對延後記憶有研究支持 多項研究及整合分析支持將重複學習分散至不同時段的做法。 間隔練習 S01 S04 S02">
+              <div class="claim-top"><span class="claim-num">C07</span><h3>分散學習對延後記憶有研究支持</h3></div>
+              <p>多項研究及整合分析支持將重複學習分散至不同時段的做法。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S01" title="查看來源">[S01]</a> <a class="cite" href="#src-S04" title="查看來源">[S04]</a> <a class="cite" href="#src-S02" title="查看來源">[S02]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>間隔長短須視任務與保留需求調整，沒有單一通用最佳表。</p></details>
+            </article><article class="claim" id="C08" data-search="沒有人人適用的黃金間隔 研究討論學習間距與保留時間的交互關係，不能簡化為所有人一律隔固定天數。 間隔練習 S04 S05">
+              <div class="claim-top"><span class="claim-num">C08</span><h3>沒有人人適用的黃金間隔</h3></div>
+              <p>研究討論學習間距與保留時間的交互關係，不能簡化為所有人一律隔固定天數。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S04" title="查看來源">[S04]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>簡報中的時間表純屬教學示例。</p></details>
+            </article></div></section><section class="topic-group" id="topic-3"><div class="group-heading"><span>04</span><h2>合併策略</h2><em>2 則證據卡</em></div><div class="claims"><article class="claim" id="C09" data-search="分散決定何時練，提取決定怎麼練 在不同日子主動回想舊知，可以把間隔安排和提取練習結合。 合併策略 S05 S06">
+              <div class="claim-top"><span class="claim-num">C09</span><h3>分散決定何時練，提取決定怎麼練</h3></div>
+              <p>在不同日子主動回想舊知，可以把間隔安排和提取練習結合。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S05" title="查看來源">[S05]</a> <a class="cite" href="#src-S06" title="查看來源">[S06]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>這是整合性教學建議，需依課程與學習者調整。</p></details>
+            </article><article class="claim" id="C10" data-search="錯題是下一輪的學習線索 練習後核對答案、記下錯誤類型，可協助安排下一輪需要再學的內容。 合併策略 S02 S05">
+              <div class="claim-top"><span class="claim-num">C10</span><h3>錯題是下一輪的學習線索</h3></div>
+              <p>練習後核對答案、記下錯誤類型，可協助安排下一輪需要再學的內容。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S02" title="查看來源">[S02]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>執行流程為本作品的教學設計示範。</p></details>
+            </article></div></section><section class="topic-group" id="topic-4"><div class="group-heading"><span>05</span><h2>交錯練習</h2><em>2 則證據卡</em></div><div class="claims"><article class="claim" id="C11" data-search="交錯練習和間隔練習不相同 交錯練習是把不同類型的問題或概念交替練習；間隔練習則著重同一內容跨時間再出現。 交錯練習 S05 S01">
+              <div class="claim-top"><span class="claim-num">C11</span><h3>交錯練習和間隔練習不相同</h3></div>
+              <p>交錯練習是把不同類型的問題或概念交替練習；間隔練習則著重同一內容跨時間再出現。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S05" title="查看來源">[S05]</a> <a class="cite" href="#src-S01" title="查看來源">[S01]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>交錯是否有益需看問題類型，不能作普遍化保證。</p></details>
+            </article><article class="claim" id="C12" data-search="比較辨認類別可以是交錯練習目標 交錯某些相近的題型，可要求學習者練習辨認該使用哪一類方法。 交錯練習 S05">
+              <div class="claim-top"><span class="claim-num">C12</span><h3>比較辨認類別可以是交錯練習目標</h3></div>
+              <p>交錯某些相近的題型，可要求學習者練習辨認該使用哪一類方法。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>數學題型只是本作品原創示例，非原研究使用的題目。</p></details>
+            </article></div></section><section class="topic-group" id="topic-5"><div class="group-heading"><span>06</span><h2>研究限制</h2><em>3 則證據卡</em></div><div class="claims"><article class="claim" id="C13" data-search="研究的證據有強弱與範圍差異 大型綜述與教學指引皆區分不同策略、不同建議的支持程度，不能把所有技巧說成同樣有效。 研究限制 S01 S02 S06">
+              <div class="claim-top"><span class="claim-num">C13</span><h3>研究的證據有強弱與範圍差異</h3></div>
+              <p>大型綜述與教學指引皆區分不同策略、不同建議的支持程度，不能把所有技巧說成同樣有效。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S01" title="查看來源">[S01]</a> <a class="cite" href="#src-S02" title="查看來源">[S02]</a> <a class="cite" href="#src-S06" title="查看來源">[S06]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>不同資料採用的評估框架不完全相同，不應比較數字化排名。</p></details>
+            </article><article class="claim" id="C14" data-search="重讀與畫線不能被說成毫無價值 研究綜述對重讀與畫重點的整體實用性評價較低，但不代表完全沒有情境性的用途。 研究限制 S01">
+              <div class="claim-top"><span class="claim-num">C14</span><h3>重讀與畫線不能被說成毫無價值</h3></div>
+              <p>研究綜述對重讀與畫重點的整體實用性評價較低，但不代表完全沒有情境性的用途。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S01" title="查看來源">[S01]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>避免用『無效』『禁止』等絕對詞。</p></details>
+            </article><article class="claim" id="C15" data-search="提取練習不是只會背誦 研究綜述與教學研究討論提取練習在理解、應用及延伸測驗中的可能益處，但需依情境理解。 研究限制 S05 S07">
+              <div class="claim-top"><span class="claim-num">C15</span><h3>提取練習不是只會背誦</h3></div>
+              <p>研究綜述與教學研究討論提取練習在理解、應用及延伸測驗中的可能益處，但需依情境理解。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S05" title="查看來源">[S05]</a> <a class="cite" href="#src-S07" title="查看來源">[S07]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>不要將單一比較研究外推成所有高層次能力都顯著進步。</p></details>
+            </article></div></section><section class="topic-group" id="topic-6"><div class="group-heading"><span>07</span><h2>應用</h2><em>3 則證據卡</em></div><div class="claims"><article class="claim" id="C16" data-search="用短題目練習主動回想 在閱讀一個新單元之後，設計不看筆記的短答題，再回頭檢查並修改答案。 應用 S02 S05">
+              <div class="claim-top"><span class="claim-num">C16</span><h3>用短題目練習主動回想</h3></div>
+              <p>在閱讀一個新單元之後，設計不看筆記的短答題，再回頭檢查並修改答案。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S02" title="查看來源">[S02]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>這是教學型流程設計，不是研究固定的標準操作程序。</p></details>
+            </article><article class="claim" id="C17" data-search="多次回到同一概念 可以在不同日子重訪先前的核心概念，並且以再次回想的方式確認記憶。 應用 S02 S05 S04">
+              <div class="claim-top"><span class="claim-num">C17</span><h3>多次回到同一概念</h3></div>
+              <p>可以在不同日子重訪先前的核心概念，並且以再次回想的方式確認記憶。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S02" title="查看來源">[S02]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a> <a class="cite" href="#src-S04" title="查看來源">[S04]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>七日安排是示例，不是經研究驗證的個人最佳時程。</p></details>
+            </article><article class="claim" id="C18" data-search="自我提問從基本到應用 以定義、比較和情境判斷等問題引導回想，之後透過答案比對修正理解。 應用 S02 S05">
+              <div class="claim-top"><span class="claim-num">C18</span><h3>自我提問從基本到應用</h3></div>
+              <p>以定義、比較和情境判斷等問題引導回想，之後透過答案比對修正理解。</p>
+              <div class="claim-source"><span>證據來源</span> <a class="cite" href="#src-S02" title="查看來源">[S02]</a> <a class="cite" href="#src-S05" title="查看來源">[S05]</a></div>
+              <details><summary>這項結論不能被怎樣解讀？</summary><p>題目為本作品原創，非來源文獻的測驗題。</p></details>
+            </article></div></section></div><section id="bibliography" style="scroll-margin-top:30px;margin-top:80px"><div class="group-heading"><span>08</span><h2>來源文獻庫</h2><em>7 篇資料｜全部可溯源</em></div><div class="source-grid"><article class="source-card" id="src-S01">
+          <span class="src-chip">S01 · 2013</span>
+          <h3>Improving Students’ Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology</h3><p class="src-pub">John Dunlosky、Katherine A. Rawson、Elizabeth J. Marsh、Mitchell J. Nathan、Daniel T. Willingham<br>Psychological Science in the Public Interest, 14(1), 4–58</p>
+          <p>評估十種常見讀書技巧的適用性。練習測驗與分散練習評為高實用性；穿插練習、自我解釋與精緻化提問評為中等實用性。畫重點、重讀等方法整體評價較低，但這不代表在所有情境完全無效。</p><p class="source-limit"><b>證據邊界：</b>系統性綜述的實用性分類反映當時文獻；不是對每個人、每門課的必然效果，也不是量化個人改善率。</p>
+          <div class="source-bottom"><span>學術研究綜述</span><a target="_blank" rel="noopener noreferrer" href="https://www.psychologicalscience.org/journals/pspi/1529100612453266/">閱讀原始資料 ↗</a></div>
+        </article><article class="source-card" id="src-S02">
+          <span class="src-chip">S02 · 2007</span>
+          <h3>Organizing Instruction and Study to Improve Student Learning</h3><p class="src-pub">Harold Pashler 等編撰小組<br>Institute of Education Sciences / What Works Clearinghouse</p>
+          <p>建議將學習活動分散到不同時間，使用小測驗重新接觸關鍵內容，也提出交替呈現範例與解題、延後判斷學會程度等方法。不同具體建議的證據等級不同。</p><p class="source-limit"><b>證據邊界：</b>政策型教學指引不是某個最佳時間間隔公式；證據等級要以各子推薦項目為準，不能概括成所有項目皆強證據。</p>
+          <div class="source-bottom"><span>政府教育實務指引</span><a target="_blank" rel="noopener noreferrer" href="https://ies.ed.gov/ncee/WWC/PracticeGuide/1/Published">閱讀原始資料 ↗</a></div>
+        </article><article class="source-card" id="src-S03">
+          <span class="src-chip">S03 · 2008</span>
+          <h3>The Critical Importance of Retrieval for Learning</h3><p class="src-pub">Jeffrey D. Karpicke、Henry L. Roediger III<br>Science, 319(5865), 966–968；Washington University 研究資訊頁</p>
+          <p>在外語詞彙學習實驗中，首次答對後繼續進行提取測驗有助於延後回憶；持續重複閱讀但不再測驗的條件未呈現同樣的延後回憶效益。學生對自己未來表現的預測也未準確對應真實表現。</p><p class="source-limit"><b>證據邊界：</b>特定實驗設計與外語詞彙材料，不應外推成『重讀永遠沒有用』。</p>
+          <div class="source-bottom"><span>同行評審實驗研究</span><a target="_blank" rel="noopener noreferrer" href="https://profiles.wustl.edu/en/publications/the-critical-importance-of-retrieval-for-learning/">閱讀原始資料 ↗</a></div>
+        </article><article class="source-card" id="src-S04">
+          <span class="src-chip">S04 · 2006</span>
+          <h3>Distributed Practice in Verbal Recall Tasks: A Review and Quantitative Synthesis</h3><p class="src-pub">Nicholas J. Cepeda、Harold Pashler、Edward Vul、John T. Wixted、Doug Rohrer<br>Psychological Bulletin, 132(3), 354–380；作者研究資料頁</p>
+          <p>對分散練習與回憶作業的研究進行回顧與數量整合，討論學習次數間隔及最終測驗間隔對記憶維持的影響。</p><p class="source-limit"><b>證據邊界：</b>主要著眼於語文回憶任務，不能直接推算任何單一學科的成績增幅。</p>
+          <div class="source-bottom"><span>整合分析（meta-analysis）</span><a target="_blank" rel="noopener noreferrer" href="https://www.yorku.ca/ncepeda/publications/CPVWR2006.html">閱讀原始資料 ↗</a></div>
+        </article><article class="source-card" id="src-S05">
+          <span class="src-chip">S05 · 2018</span>
+          <h3>Teaching the Science of Learning</h3><p class="src-pub">Yana Weinstein、Christopher R. Madan、Megan A. Sumeracki<br>Cognitive Research: Principles and Implications, 3, Article 2</p>
+          <p>介紹六種認知學習策略：分散、交錯、提取、精緻化、具體例子及雙重編碼，並示範在教學中的做法。分散與提取可搭配使用，其他策略應依學習目標和教材選擇。</p><p class="source-limit"><b>證據邊界：</b>文中教學例子是演示用途；不保證每個人採用同一時程皆最有效。</p>
+          <div class="source-bottom"><span>開放取用教學研究綜述</span><a target="_blank" rel="noopener noreferrer" href="https://link.springer.com/article/10.1186/s41235-017-0087-y">閱讀原始資料 ↗</a></div>
+        </article><article class="source-card" id="src-S06">
+          <span class="src-chip">S06 · 2016</span>
+          <h3>Six Strategies for Effective Learning</h3><p class="src-pub">Megan Smith、Yana Weinstein<br>The Learning Scientists</p>
+          <p>把六個有研究支持的學習策略提供給師生，並明示策略間的證據強度不同；提取與分散有較多支持，精緻化等策略存在限制。</p><p class="source-limit"><b>證據邊界：</b>二手科普說明，不能取代論文原始實驗的方法細節。</p>
+          <div class="source-bottom"><span>研究者撰寫之教學科普</span><a target="_blank" rel="noopener noreferrer" href="https://www.learningscientists.org/blog/2016/8/18-1">閱讀原始資料 ↗</a></div>
+        </article><article class="source-card" id="src-S07">
+          <span class="src-chip">S07 · 2011</span>
+          <h3>Retrieval Practice Produces More Learning than Elaborative Studying with Concept Mapping</h3><p class="src-pub">Jeffrey D. Karpicke、Janell R. Blunt<br>Science, 331, 772–775；IES / What Works Clearinghouse Study 67306</p>
+          <p>What Works Clearinghouse 審查這項提取練習與概念圖學習的比較研究，指出其中部分後測比較有統計顯著正向結果；單一研究不能代表整體所有學習情境。</p><p class="source-limit"><b>證據邊界：</b>WWC 明言此審查不等於對全部相關文獻的完整判斷。</p>
+          <div class="source-bottom"><span>政府研究審查紀錄（對應同行評審實驗）</span><a target="_blank" rel="noopener noreferrer" href="https://ies.ed.gov/ncee/wwc/Study/67306">閱讀原始資料 ↗</a></div>
+        </article></div></section>
+      <footer>學習科學教學知識庫 · 來源查核日期 2026-11-23 · 本網站可離線使用（開啟外部文獻需連網）。原創文字整理；沒有轉載受著作權保護的論文全文。</footer></main></div>
+    <script>
+    const input=document.getElementById('search'), cards=[...document.querySelectorAll('.claim')];
+    function filter(){const q=input.value.trim().toLocaleLowerCase();let shown=0;cards.forEach(x=>{const ok=x.dataset.search.toLocaleLowerCase().includes(q);x.classList.toggle('hidden',!ok);if(ok)shown++});document.querySelectorAll('.topic-group').forEach(g=>g.classList.toggle('hidden',![...g.querySelectorAll('.claim')].some(x=>!x.classList.contains('hidden'))));document.getElementById('resultCount').textContent=shown+' / '+cards.length+' 則證據';}
+    input.addEventListener('input',filter);
+    if(location.hash && location.hash.startsWith('#C')){const e=document.querySelector(location.hash);if(e){e.style.boxShadow='0 0 0 3px #f8c98f';}}
+    </script></body></html>
